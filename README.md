@@ -1,3 +1,5 @@
+A simple proof-of-concept for managing authentication state and simulating a server-side authentication system.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
