@@ -4,6 +4,7 @@ import { Login } from './pages/Login'
 import { Home } from './pages/Home'
 import { Navigation } from './components/Navigation'
 import { Profile } from './pages/Profile'
+import { Logout } from './pages/Logout'
 
 interface RoutesProps {
 
@@ -15,6 +16,7 @@ export const Routes: React.FC<RoutesProps> = () => {
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/logout" component={Logout} />
       <Route exact path="/profile" component={Profile} />
     </Switch>
   </BrowserRouter>

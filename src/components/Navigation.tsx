@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+import { logout } from '../util/authentication';
 
 interface NavigationProps {
 
@@ -13,10 +14,9 @@ export const Navigation: React.FC<NavigationProps> = () => {
 
   const handleLogOut = async (e:any) => {
     e.preventDefault()
-
+    await logout().catch((error) => {})
     setCurrentUser!(null)
     localStorage.removeItem('uid')
-
     history.push('/login')
   }
 

@@ -23,17 +23,18 @@ export const Login: React.FC<LoginProps> = () => {
     return <></>
   }
 
-  const onSubmit = (e:any) => {
+  const onSubmit = async (e:any) => {
     e.preventDefault()
-    const user = login(email, password)
+    const user = await login(email, password).catch((error) => {
+      setErrorMessage(error)
+      return null
+    })
 
     if(user) {
-      console.log("Valid login submitted.");
       localStorage.setItem('uid', email)
       setCurrentUser!({ uid: email})
       history.push("/")
     } else {
-      setErrorMessage("Invalid Login")
       setEmail("")
       setPassword("")
     }
